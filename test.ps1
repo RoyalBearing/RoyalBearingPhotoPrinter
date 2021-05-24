@@ -29,7 +29,7 @@ for ($i=0; $i -lt $numPages; $i++) {
     $imagesForPage = $images[$pageStart..$pageEnd]
     $imageList = ""
     foreach ($image in $imagesForPage) {
-        $imageList = "$imageList '$image'"
+        $imageList = "$imageList $image"
     }
     Write-Host $imageList
     # create montage for page
@@ -41,6 +41,7 @@ for ($i=0; $i -lt $numPages; $i++) {
     $command = "magick montage   $imageList  montage22.png"
     $tmpFile = "C:\\Git\\PhotoPrinter\\tmp\\$directoryId.bat"
     Set-Content -Path $tmpFile -Value $command
+    Start-Process -NoNewWindow  $tmpFile
     #    Start-Process -NoNewWindow -FilePath magick.exe -ArgumentList 'montage --% -tile $tile -frame 5  -geometry +4+4 ( $imageList ) montage.png"
 }
 
