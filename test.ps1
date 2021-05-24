@@ -9,7 +9,11 @@ write-host $directoryId
 
 # get list of images in directory
 $orderDir = "$rootDir$directoryId\"
-Get-ChildItem $orderDir
+Get-ChildItem $orderDir |
+        Foreach-Object {
+            $content = Get-Content $_.FullName
+            Write-Host $_.FullName
+        }
 
 # determine number of pages
 
