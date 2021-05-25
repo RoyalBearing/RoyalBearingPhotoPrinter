@@ -5,6 +5,12 @@ function Print-RBPhotos {
     # get list of images in directory
     $orderDir = "$rootDir$directoryId\"
     Write-Host "Order dir: $orderDir"
+    if (Test-Path -Path $orderDir) {
+
+    } else {
+        Write-Host "Folder: $orderDir not found!"
+        return
+    }
     $images = Get-ChildItem $orderDir -Filter *.jpg
 
     # how many page do we need?
