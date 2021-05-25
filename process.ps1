@@ -31,9 +31,10 @@ function Print-RBPhotos {
         foreach ($image in $imagesForPage) {
             $imageList = "$imageList $image"
         }
+        $title = "Order #: $directoryId, Page $currentPage of $numPages"
         # create montage for page
         $tmpImage = "C:\Git\PhotoPrinter\tmp\$($directoryId)_$($i).png"
-        $command = "@magick montage -tile $tile -resize $resize -frame 5  -geometry +5+5   $imageList  $tmpImage"
+        $command = "@magick montage -tile $tile -resize $resize -frame 5 -pointsize 24 -geometry +5+5 -title ""$title"" $imageList  $tmpImage"
         Write-Host $command
         $tmpFile = "C:\\Git\\PhotoPrinter\\tmp\\$directoryId.bat"
         Set-Content -Path $tmpFile -Value $command
