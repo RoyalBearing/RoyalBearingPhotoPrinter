@@ -31,6 +31,13 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="PowerShell File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -55,7 +62,7 @@
       <updated>1621629966667</updated>
       <workItem from="1621629967700" duration="779000" />
       <workItem from="1621870528770" duration="8886000" />
-      <workItem from="1621955774034" duration="1788000" />
+      <workItem from="1621955774034" duration="1978000" />
     </task>
     <servers />
   </component>
