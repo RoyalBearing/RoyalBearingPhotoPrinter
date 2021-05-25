@@ -32,13 +32,15 @@ function Print-RBPhotos {
             $imageList = "$imageList $image"
         }
         # create montage for page
-        $tmpImage = "C:\Git\PhotoPrinter\tmp\$directoryId_$i.jpg"
-        $command = "@magick montage -tile $tile -size $resize -frame 5  -geometry +5+5   $imageList  $tmpImage"
+        $tmpImage = "C:\Git\PhotoPrinter\tmp\$($directoryId)_$($i).png"
+        $command = "@magick montage -tile $tile -resize $resize -frame 5  -geometry +5+5   $imageList  $tmpImage"
+        Write-Host $command
         $tmpFile = "C:\\Git\\PhotoPrinter\\tmp\\$directoryId.bat"
         Set-Content -Path $tmpFile -Value $command
         Start-Process -NoNewWindow -Wait $tmpFile
         Write-Host "Printing..."
-        Start-Process  C:\windows\system32\mspaint.exe -Arg "/p $tmpImage /pt TravisOffice"
+        Start-Sleep -s 1
+        Start-Process  -Wait C:\windows\system32\mspaint.exe -Arg "/p $tmpImage /pt TravisOffice"
         #    Start-Process -NoNewWindow -FilePath magick.exe -ArgumentList 'montage --% -tile $tile -frame 5  -geometry +4+4 ( $imageList ) montage.png"
     }
     Write-Host "Complete"
