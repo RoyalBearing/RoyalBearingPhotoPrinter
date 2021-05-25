@@ -4,7 +4,8 @@ function Print-RBPhotos {
 
     # get list of images in directory
     $orderDir = "$rootDir$directoryId\"
-    $images = Get-ChildItem $orderDir -Filter *.jpeg
+    Write-Host "Order dir: $orderDir"
+    $images = Get-ChildItem $orderDir -Filter *.jpg
 
     # how many page do we need?
     $count = $images.Count

@@ -1,6 +1,6 @@
 . .\process.ps1
 # config
-$rootDir = "Z:\"
+$rootDir = "Y:\Photos\"
 $maxPerPage = 6
 $tile = "x2"
 $resize = "320x320"
@@ -16,6 +16,6 @@ Do
 
     Write-Host "Processing $directoryId"
 
-    #Print-RBPhotos $directoryId
+    Print-RBPhotos $directoryId
 }
     While (1 -le 2)
