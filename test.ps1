@@ -42,7 +42,7 @@ for ($i=0; $i -lt $numPages; $i++) {
     $tmpFile = "C:\\Git\\PhotoPrinter\\tmp\\$directoryId.bat"
     Set-Content -Path $tmpFile -Value $command
     Start-Process -NoNewWindow -Wait $tmpFile
-    Start-Process  C:\windows\system32\mspaint.exe -Arg "/p $orderDir\montage22.png /pt Travis Office"
+    Start-Process  C:\windows\system32\mspaint.exe -Arg "/p $orderDir\montage22.png /pt TravisOffice"
     #    Start-Process -NoNewWindow -FilePath magick.exe -ArgumentList 'montage --% -tile $tile -frame 5  -geometry +4+4 ( $imageList ) montage.png"
 }
 
