@@ -1,10 +1,6 @@
+. .\config.ps1
 . .\process.ps1
-# config
-$rootDir = "Y:\Photos\"
-$maxPerPage = 6
-$tile = "x2"
-$resize = "320x320"
-$imageMagickExe = "magick.exe"
+
 
 
 Do
@@ -12,10 +8,13 @@ Do
     # get directory id from args
     Write-Host "Ready for scanning..."
     $directoryId = Read-Host
+    if ($directoryId -ne "exit") {
 
+        Write-Host "Processing $directoryId"
 
-    Write-Host "Processing $directoryId"
+        Print-RBPhotos $directoryId
 
-    Print-RBPhotos $directoryId
+    }
+
 }
-    While (1 -le 2)
+    While ($directoryId -ne "exit")
