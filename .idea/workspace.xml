@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21574b24-6893-4161-947e-e8d6a1dce51f" name="Default Changelist" comment="" />
+    <list default="true" id="21574b24-6893-4161-947e-e8d6a1dce51f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/test.ps1" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +12,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1srTywfqNHDGLE9pCySPiRs8YLH" />
   <component name="ProjectViewState">
@@ -30,7 +36,8 @@
       <option name="presentableId" value="Default" />
       <updated>1621629966667</updated>
       <workItem from="1621629967700" duration="779000" />
-      <workItem from="1621870528770" duration="1693000" />
+      <workItem from="1621870528770" duration="8886000" />
+      <workItem from="1621955774034" duration="760000" />
     </task>
     <servers />
   </component>
