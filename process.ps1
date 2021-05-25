@@ -37,7 +37,7 @@ function Print-RBPhotos {
         $MagickParameters += " ( $imageList ) "
         $MagickParameters += 'montage22.png'
         #    &'magick' $MagickParameters
-        $command = "magick montage   $imageList  montage22.png"
+        $command = "magick montage -tile $tile -size $resize -frame 5  -geometry +5+5   $imageList  montage22.png"
         $tmpFile = "C:\\Git\\PhotoPrinter\\tmp\\$directoryId.bat"
         Set-Content -Path $tmpFile -Value $command
         Start-Process -NoNewWindow -Wait $tmpFile
