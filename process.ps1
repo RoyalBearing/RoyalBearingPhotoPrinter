@@ -11,7 +11,7 @@ function Print-RBPhotos {
         Write-Host "Folder: $orderDir not found!"
         return
     }
-    $images = Get-ChildItem $orderDir -Filter *.jpg
+    $images = Get-ChildItem $orderDir -Filter $imagePrefixFilter*.jpg
 
     # how many page do we need?
     $count = $images.Count
