@@ -21,6 +21,10 @@ This needs to be configured to be logged in to the Gtransfer16@gmail.com account
 as the Y: drive.
 https://www.expandrive.com/
 
+## Execution Policy
+Scripts need to be allowed on the system. Run this command: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force;
+
+
 ##Usage
 Open a Windows command window in the root directory (C:\PhotoPrinter)
 and run the command "Powershell scan.ps1". You should see a prompt 
