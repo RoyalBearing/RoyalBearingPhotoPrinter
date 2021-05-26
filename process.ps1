@@ -1,14 +1,18 @@
 
 function Print-RBPhotos {
     param([string] $orderId)
-
+    Add-Type -AssemblyName System.speech
+    $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+    $spokenOrderId = [system.String]::Join(" ", $orderId.ToCharArray())
+    Write-Host $orderDir.ToCharArray()
     # get list of images in directory
     $orderDir = "$rootDir$directoryId\"
     Write-Host "Order dir: $orderDir"
     if (Test-Path -Path $orderDir) {
 
     } else {
-        Write-Host "Folder: $orderDir not found!"
+        Write-Host "No pictures found for order: $orderId"
+        $speak.Speak("No pictures found for order: $spokenOrderId")
         return
     }
     $images = Get-ChildItem $orderDir -Filter $imagePrefixFilter*.jpg
@@ -44,6 +48,7 @@ function Print-RBPhotos {
         Start-Process  -Wait C:\windows\system32\mspaint.exe -Arg "/p $tmpImage /pt $printer"
         #    Start-Process -NoNewWindow -FilePath magick.exe -ArgumentList 'montage --% -tile $tile -frame 5  -geometry +4+4 ( $imageList ) montage.png"
     }
+    $speak.Speak("Order number $spokenOrderId has finished")
     Write-Host "Complete"
     Write-Host ""
     Write-Host ""
