@@ -53,7 +53,7 @@ function Print-RBPhotos {
         Start-Process -NoNewWindow -Wait $tmpFile
         Write-Host "Printing..."
         Start-Sleep -s 1
- #       Start-Process  -Wait C:\windows\system32\mspaint.exe -Arg "/p $tmpImage /pt $printer"
+        Start-Process  -Wait C:\windows\system32\mspaint.exe -Arg "/p $tmpImage /pt $printer"
         #    Start-Process -NoNewWindow -FilePath magick.exe -ArgumentList 'montage --% -tile $tile -frame 5  -geometry +4+4 ( $imageList ) montage.png"
     }
     $speak.Speak("Order number $spokenOrderId has finished")
