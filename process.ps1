@@ -15,7 +15,16 @@ function Print-RBPhotos {
         return
     }
     $images = Get-ChildItem $orderDir -Filter $imagePrefixFilter*.jpg
-
+    $foundBadImage = 0
+    foreach ($image in $images) {
+        If ((Get-Item $orderDir$image).length -eq 0) {
+            $foundBadImage = $foundBadImage + 1
+        }
+    }
+    if ($foundBadImage -ne 0) {
+        Write-Host "There is $foundBadImage invalid image"
+        $speak.Speak("There is $foundBadImage invalid image")
+    }
     # how many page do we need?
     $count = $images.Count
     $numPages = [Math]::Ceiling($count/$maxPerPage)
@@ -44,7 +53,7 @@ function Print-RBPhotos {
         Start-Process -NoNewWindow -Wait $tmpFile
         Write-Host "Printing..."
         Start-Sleep -s 1
-        Start-Process  -Wait C:\windows\system32\mspaint.exe -Arg "/p $tmpImage /pt $printer"
+ #       Start-Process  -Wait C:\windows\system32\mspaint.exe -Arg "/p $tmpImage /pt $printer"
         #    Start-Process -NoNewWindow -FilePath magick.exe -ArgumentList 'montage --% -tile $tile -frame 5  -geometry +4+4 ( $imageList ) montage.png"
     }
     $speak.Speak("Order number $spokenOrderId has finished")
