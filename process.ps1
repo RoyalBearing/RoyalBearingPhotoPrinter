@@ -4,7 +4,6 @@ function Print-RBPhotos {
     Add-Type -AssemblyName System.speech
     $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
     $spokenOrderId = [system.String]::Join(" ", $orderId.ToCharArray())
-    Write-Host $orderDir.ToCharArray()
     # get list of images in directory
     $orderDir = "$rootDir$directoryId\"
     Write-Host "Order dir: $orderDir"
