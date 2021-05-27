@@ -10,7 +10,7 @@ configured to issue an ENTER character after the code. https://www.ssetechnologi
 
 ##Printer
 The printer should be a local printer, exclusive to the machine 
-running this station. The printer title shjould be: RBOrderPhotoPrinter
+running this station. The printer title should be: PhotoPrinter
 
 ##Computer
 The computer needs to be running Windows, and have ExpanDrive
@@ -22,7 +22,13 @@ as the Y: drive.
 https://www.expandrive.com/
 
 ## Execution Policy
-Scripts need to be allowed on the system. Run this command: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force;
+Scripts need to be allowed on the system. Run this command: ```Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force;```
+
+## Setup
+- Clone into ```c:\PhotoPrinter```
+- Make a shortcut that runs: ```Powershell -noexit C:\PhotoPrinter\RoyalBearingPhotoPrinter\scan.ps1```
+- Set the working directory for the shortcut to: ```C:\PhotoPrinter\RoyalBearingPhotoPrinter\```     
+- Set power settings so the computer never sleeps or turns off
 
 
 ##Usage
