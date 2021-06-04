@@ -2,8 +2,8 @@
 
 # config
 $rootDir = "Y:\Photos\"
-$maxPerPage = 12
-$tile = "3x4"
+$maxPerPage = 4
+$tile = "2x2"
 $resize = "700x700"
 $imageMagickExe = "magick.exe"
 $printer = "OrderPhotoPrinter"
